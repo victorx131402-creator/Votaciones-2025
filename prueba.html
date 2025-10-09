@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio de sesión - Votaciones 2024</title>
+</head>
+<body>
+  <h2>Iniciar sesión</h2>
+
+  <input type="email" id="email" placeholder="Correo electrónico" />
+  <br><br>
+  <input type="password" id="password" placeholder="Contraseña" />
+  <br><br>
+  <button id="loginBtn">Ingresar</button>
+
+  <p id="mensaje"></p>
+
+  <script type="module">
+    // Importar Firebase
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+
+    // Configuración de tu proyecto Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyBYflm70mFVdioZqKdiWe1m92XCTy44Z_c",
+      authDomain: "votaciones-2024-f1e0c.firebaseapp.com",
+      databaseURL: "https://votaciones-2024-f1e0c-default-rtdb.firebaseio.com/",
+      projectId: "votaciones-2024-f1e0c",
+      storageBucket: "votaciones-2024-f1e0c.firebasestorage.app",
+      messagingSenderId: "293361877394",
+      appId: "1:293361877394:web:22f329fdcfceac4d5ac14b"
+    };
+
+    // Inicializar Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Botón de inicio de sesión
+    const loginBtn = document.getElementById("loginBtn");
+    const mensaje = document.getElementById("mensaje");
+
+    loginBtn.addEventListener("click", () => {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          mensaje.textContent = "Inicio de sesión exitoso ✅";
+          mensaje.style.color = "green";
+
+          // Redirigir al panel
+          setTimeout(() => {
+            window.location.href = "panel.html";
+          }, 1500);
+        })
+        .catch((error) => {
+          mensaje.textContent = "❌ Error: " + error.message;
+          mensaje.style.color = "red";
+        });
+    });
+
+    // Mantener sesión activa
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log("Sesión activa:", user.email);
+      } else {
+        console.log("No hay sesión iniciada");
+      }
+    });
+  </script>
+</body>
+</html>

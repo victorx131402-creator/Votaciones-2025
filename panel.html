@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Panel - Personalizar colores</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+  <header class="header">
+    <div class="logo"><a href="index.html" style="color:inherit;text-decoration:none;font-weight:bold">Mi sitio</a></div>
+    <nav>
+      <a href="grupos.html">Grupos</a>
+      <a href="alumnos.html">Alumnos</a>
+      <a href="panel.html">Colores</a>
+      <a href="resultados.html">Resultados</a>
+    </nav>
+  </header>
+  <main class="main-content" id="panel" style="padding:96px 32px 32px;">
+    <h1>Panel de personalización</h1>
+    <p>Modifica los colores de la interfaz, se guardarán en Firebase y se aplicarán en todas las páginas.</p>
+
+    <div class="controls">
+      <div class="control">
+        <div class="row">
+          <label for="color1">Color 1 (fondo)</label>
+          <input id="color1" type="color" />
+        </div>
+        <small>Usado como fondo principal</small>
+      </div>
+      <div class="control">
+        <div class="row">
+          <label for="color2">Color 2 (primario)</label>
+          <input id="color2" type="color" />
+        </div>
+        <small>Usado en encabezado y botones primarios</small>
+      </div>
+      <div class="control">
+        <div class="row">
+          <label for="color3">Color 3 (textos)</label>
+          <input id="color3" type="color" />
+        </div>
+        <small>Usado para texto/elementos secundarios</small>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="preview">
+      <div class="card preview-card">
+        <h2>Previsualización</h2>
+        <label>Usuario</label>
+        <div class="input-group"><input placeholder="Nombre" /></div>
+        <button class="btn btn-primary">Entrar</button>
+        <button class="btn btn-secondary">Cancelar</button>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="nube.js"></script>
+</body>
+</html>
+
+
+

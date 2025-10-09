@@ -1,0 +1,463 @@
+/* ===== Header principal (reemplaza la sidebar) ===== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: var(--color2, #2c3e50);
+  color: #fff;
+  z-index: 1000;
+}
+.header nav a {
+  margin-left: 16px;
+  color: var(--color1, #fff);
+  text-decoration: none;
+  font-weight: bold;
+}
+.header .logo {
+  font-weight: bold;
+}
+
+/* Ensure logo image doesn't overflow and nav is always visible */
+.header .logo img { height: 42px; width: auto; display:block; }
+.header nav { display:flex; align-items:center; gap:12px; }
+
+/* Make sure main content leaves enough space for header */
+.main-content { padding-top: 84px; display:block; }
+
+/* general .container to center content and set max-width */
+.container { max-width: 980px; margin: 0 auto; padding: 0 18px; }
+
+/* panel margin removed: layout uses header fixed */
+/* ===== Estilos generales ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: var(--color1);
+  color: var(--color3);
+  min-height: 100vh;
+}
+
+.body-index {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Usar min-height es un poco más robusto */
+  margin: 0;
+  font-size: 100%;
+}
+
+/* header styles defined above */
+
+/* ===== Bienvenida ===== */
+.bienvenida {
+  color: var(--color3);
+}
+
+/* ===== Contenedores ===== */
+.container-index {
+  max-width: 500px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ===== Imagenes ===== */
+
+.imagen-index {
+  width: 50%;
+  height: 70%;
+}
+
+/* ===== Tarjeta ===== */
+.card {
+  background: #fff;
+  padding: 28px 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px 2px rgba(0,0,0,0.08);
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 18px auto;
+}
+
+.registro{
+  margin: 0px 120px 0px 0px;
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  color: var(--color3);
+}
+
+.card label {
+  font-size: 14px;
+  color: #555;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 35px 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+input[type="color"] {
+  cursor: pointer;
+  background: none;
+}
+
+.Registro-DNI {
+  margin-left: 50px;
+}
+
+/* ===== Botones ===== */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: var(--color2);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  filter: brightness(80%);
+}
+
+.btn-secondary {
+  background: var(--color2);
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  filter: brightness(80%);
+}
+
+
+/* Contenedor principal */
+.panel {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+  /* panel margin removed: layout uses header fixed */
+
+  /* Contenedor principal: limitar ancho, centrar contenido y asegurar espacio bajo header */
+  .main-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 96px; /* espacio para header fijo */
+  }
+
+.panel h1 {
+  margin-bottom: 10px;
+  color: var(--color2);
+}
+
+.panel p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Controles */
+.controls {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.control {
+  flex: 1;
+  min-width: 250px;
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.control .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.control label {
+  font-weight: bold;
+}
+
+.control input[type="color"] {
+  width: 50px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.control small {
+  display: block;
+  font-size: 12px;
+  color: #555;
+  margin-top: 6px;
+}
+
+/* Previsualización */
+.preview {
+  gap: 20px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.preview-card {
+  width: 40%;
+}
+
+/* ===== Pantalla de carga ===== */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff; /* fondo blanco */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* por encima de todo */
+}
+
+/* Animación círculo girando */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ccc;
+  border-top: 6px solid var(--color2, #000); /* usa tu color primario */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Modal login */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Ocultar loader cuando termina */
+body.loaded #loader {
+  display: none;
+}
+
+/* ===== Responida ===== */
+
+@media (max-width: 1000px) {
+  .body-index {
+    font-size: 70%;
+  }
+
+  .container-index {
+  max-width: 300px;
+  }
+
+  .card {
+  background: #fff;
+  padding: 40px 30px;
+  width: 90%;
+  }
+
+  .preview-card {
+  width: 40%;
+  }
+
+  .card h2 {
+  margin-bottom: 10px;
+  color: var(--color3);
+  }
+
+  .card label {
+  font-size: 12px;
+  color: #555;
+  display: block;
+  margin-bottom: px;
+  }
+
+}
+
+/* ===== Estilos para la página de grupos ===== */
+/* Grid de grupos: varias columnas y centrado */
+/* Grid para páginas de grupos y votación: columnas más compactas */
+/* keep grid centered inside container */
+#gruposContainer, #votarContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  align-items: start;
+  width: 100%;
+  grid-auto-rows: auto;
+  margin: 0 auto 24px;
+}
+
+/* Cada tarjeta individual debe ser cuadrada */
+
+.group-card {
+  width: 100% !important;
+  padding: 0 !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  transition: transform .18s ease, box-shadow .18s ease;
+  position: relative;
+}
+
+.group-card:hover { transform: translateY(-6px); box-shadow: 0 10px 22px rgba(0,0,0,0.08); }
+
+/* Contenido interno de la tarjeta: imagen y footer */
+.group-card .card-media {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* cuadrado perfecto */
+  background: #fafafa;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px; /* pequeño padding para que la imagen no toque bordes */
+  box-sizing: border-box;
+}
+
+.group-card .card-media img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* mostrar imagen completa sin recortar */
+  display: block;
+}
+
+.group-card .card-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: space-between;
+  flex: 1 1 auto;
+}
+
+.group-card .card-title {
+  text-align: center;
+  font-weight: 700;
+  color: var(--color3);
+  margin-top: 6px;
+  font-size: 15px;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.group-card .card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.group-card .card-actions .btn {
+  flex: 1 1 auto;
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+/* votes badge removed */
+
+.group-card .card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* la imagen llena el área, recortando si es necesario */
+  display: block;
+}
+
+.group-card .card-body {
+  padding: 10px 12px;
+  background: #fff;
+  text-align: left;
+  flex: 0 0 auto;
+}
+
+/* Botón agregar: tamaño natural y siempre visible */
+/* toolbar que contiene el botón agregar; se mantiene sticky para que siempre sea accesible */
+.groups-toolbar {
+  position: relative; /* dejar en el flujo normal para no quedar bajo el header */
+  z-index: 10;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+#addGroupBtn { display:inline-block; width:auto; padding: 10px 16px; border-radius: 8px; }
+
+/* Modal de confirmación pequeño (ya hay estilos para .modal/.modal-content) */
+#deleteConfirmModal .modal-content { max-width:360px; }
